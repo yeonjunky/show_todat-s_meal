@@ -100,5 +100,7 @@ def main():
                            lunch = today_lunch(),
                            dinner = today_dinner())
 
+print(month_schedule())
+
 if __name__ == '__main__':
     app.run(port=8080)
