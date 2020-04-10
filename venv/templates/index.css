@@ -1,12 +1,38 @@
 body{
-    background-color : #dfe6e9;
+    background-color : #e0e0e0;
 }
 
-.title{
-    background-color: #74b9ff;
+h2{
+    margin-bottom: 50px;
+    margin-left: 30px;
 }
 
+.container{
+    position: absolute;
+    height: 300px;
+    width: 600px;
+    top: 60px;
+    display: flex;
+    margin-top: 30px;
+}
 
-.content{
-    background-color: white;
+.card{
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 200px;
+    border-radius: 10px;
+    position: relative;
+    margin-left: 30px;
+    background-color: #FFF;
+    box-shadow: 0 4px 8px 0 rgb(145, 145, 145);
+}
+
+.card h3{
+    margin-left: 10px;
+}
+
+.card p{
+    margin: 0px;
+    font-size: 15px;
 }
