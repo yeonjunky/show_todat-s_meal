@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="kor">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height ,initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="index.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <title>Daedeok_highschool</title>
 </head>
+
 <body>
 
     <h2>대덕고 알리미</h2>
@@ -16,17 +19,31 @@
             <h3>학사일정</h3>
             <p>{{month_schedule}}</p>
         </div>
-    
+
         <div class="card">
             <h3>급식</h3>
-            
-            <p>{{lunch}}</p>
+
+            <p id="lunch"></p>
             <br>
-            <p>{{dinner}}</p>
+            <p id="dinner">{{dinner}}</p>
         </div>
+
     </div>
     <button class="button">Dark mode</button>
 
+    <script>
+        const lunch = document.getElementById('lunch');
+        const dinner = document.getElementById('dinner');
 
-    </body>        
+        fetch('asdf.txt')
+            .then(response => response.text())
+            .then(text => lunch.innerHTML = text)
+
+        fetch('asdf.txt')
+            .then(response => response.text())
+            .then(text => dinner.innerHTML = text)
+    </script>
+
+</body>
+
 </html>
