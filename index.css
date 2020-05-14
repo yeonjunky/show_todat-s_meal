@@ -1,5 +1,4 @@
 body{
-    background-color : #e0e0e0;
     width: 100%;
     height: 100%;
 }
@@ -29,7 +28,6 @@ h2{
     margin-top: 10px;
     margin-left: 30px;
     background-color: #FFF;
-    box-shadow: 0 4px 8px 0 rgb(145, 145, 145);
 }
 
 .card h3{
@@ -66,7 +64,7 @@ h2{
 @media (prefers-color-scheme: dark){
 
     body{
-        background-color: rgb(85, 84, 84);
+        background-color: #555454;
     }
 
     .card{

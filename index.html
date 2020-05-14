@@ -10,31 +10,66 @@
     <title>Daedeok_highschool</title>
 </head>
 
-<body>
+<body style="background-color: rgb(224, 224, 224);">
 
     <h2>ㄷㄷㄱ</h2>
 
     <div class="container">
-        <div class="card">
+        <div class="card" id='schedule'>
             <h3>학사일정</h3>
-            <p>{{month_schedule}}</p>
+            <p id="p_schedule">{{month_schedule}}</p>
         </div>
 
-        <div class="card">
+        <div class="card" id='meal_card'>
             <h3>급식</h3>
-            <p id="meal"></p>
+            <p id="p_meal"></p>
         </div>
 
     </div>
 
-    <button class="button">Dark mode</button>
+    <button class="button" id='darkmode' style="padding : 0px;" onclick="darkmode()">
+        <p>Dark mode</p>
+    </button>
 
     <script>
-        const lunch = document.getElementById('meal');
+        const dark = document.getElementById('darkmode');
+        const card_m = document.getElementById('meal_card');
+        const card_s = document.getElementById('schedule');
+        const p_schedule = document.getElementById('p_schedule');
+        const p_meal = document.getElementById('p_meal');
 
         fetch('asdf.txt')
             .then(response => response.text())
-            .then(text => lunch.innerHTML = text)
+            .then(text => p_meal.innerHTML = text)
+
+        function darkmode() {
+
+            let current_body = document.body.style.backgroundColor;
+            let current_card = card_s.style.backgroundColor;
+
+            const body_base = 'rgb(224, 224, 224)';
+            const card_base = '#FFF';
+
+            const body_change = 'rgb(85, 84, 84)';
+            const card_change = '#2c2c2c';
+
+            if (current_body === body_base) {
+                document.body.style.backgroundColor = body_change;
+                card_s.style.backgroundColor = card_change;
+                card_s.style.color = 'rgb(250, 250, 250)';
+                card_m.style.backgroundColor = card_change;
+                card_m.style.color = 'rgb(250, 250, 250)';
+            }
+            else{
+                document.body.style.backgroundColor = body_base;
+                card_s.style.backgroundColor = card_base;
+                card_s.style.color = 'rgb(0, 0, 0)';
+                card_m.style.backgroundColor = card_base;
+                card_m.style.color = 'rgb(0, 0, 0)';
+            }
+
+            dark.innerHTML = "OOPS!";
+        }
     </script>
 
 </body>
