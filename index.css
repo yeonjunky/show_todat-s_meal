@@ -53,6 +53,21 @@ h2{
     border-radius: 10px;
 }
 
+.nav{
+    padding: 0px;
+    margin: 0px;
+    width: 80px;
+    list-style: none;
+    text-decoration: none;
+    position: absolute;
+    left: 95%;
+    top: 50%;
+}
+
+.nav li {
+    text-align: center;
+}
+
 /* responsive columns */
 @media screen and (max-width: 600px) {
     .container{

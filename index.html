@@ -13,18 +13,27 @@
 
     <h2>ㄷㄷㄱ</h2>
 
-    <div class="container">
-        <div class="card" id='schedule'>
-            <h3>학사일정</h3>
-            <p id="p_schedule">{{month_schedule}}</p>
+    <div class="section" id="section1">
+        <div class="container">
+            <div class="card" id='schedule'>
+                <h3>학사일정</h3>
+                <p id="p_schedule">{{month_schedule}}</p>
+            </div>
+
+            <div class="card" id='meal_card'>
+                <h3>급식</h3>
+                <p id="p_meal"></p>
+            </div>
+
         </div>
 
-        <div class="card" id='meal_card'>
-            <h3>급식</h3>
-            <p id="p_meal"></p>
-        </div>
-
+        <ul class="nav">
+            <li>급식, 일정</li><br>
+            <li><a href="#section2">to do</a></li><br>
+            <li><a href="#section3">3</a></li>
+        </ul>
     </div>
+
 
     <button class="button" id='darkmode' style="padding : 0px;" onclick="darkmode()">
         <p>Dark mode</p>
