@@ -17,12 +17,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with: 
-        token: ${{secrets.PAT_TOKEN}}
+
 
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
+        architecture: 'x64'
         python-version: 3.7
   
     - name: Git Auto Commit
@@ -31,8 +31,6 @@ jobs:
   
     - name: crawling and push
       run: |
-        pip install beautifulsoup4 requests pytz
-        python daedeok.py
         git add meal.txt
         git commit -m "update"
         git push origin master
