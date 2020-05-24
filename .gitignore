@@ -1,6 +1,5 @@
 /vscode
 .vscode/settings.json
-README.md
 .vscode
 node_modules
 .github
