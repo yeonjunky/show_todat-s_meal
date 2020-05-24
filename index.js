@@ -1,6 +1,7 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
 
+
 function getTime(){
     const date = new Date();
     const yyyy = date.getFullYear().toString();
@@ -31,15 +32,27 @@ const getHtml = async () => {
     }
 }
 
+const lunch = {};
+
 getHtml()
     .then(html => {
-        const lunch = {};
         const $ = cheerio.load(html.data);
         const $body = $('body').find("tbody").children('tr').eq(1);
-        lunch.key = $body.find('th').html();
+        lunch.key = $body.find('th').text();
         lunch.data = $body.find('td').eq(day).text();
         if (lunch.data == " "){
-            console.log('오늘 급식은 없습니다.');
-        }
-        console.log(lunch.data);
+            lunch.data = '오늘 급식은 없습니다.';
+        }        
     });
+
+let a = {}
+
+let a = setTimeout(function () {
+    return lunch}
+    , 500);
+
+// const git_url = 'https://yeonjunky.github.io/';
+// getHtml()
+//     .then(html =>{
+        // const $ = 
+    // })

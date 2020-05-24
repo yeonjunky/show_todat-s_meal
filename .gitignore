@@ -2,4 +2,4 @@
 .vscode/settings.json
 .vscode
 node_modules
-.github
+.github/workflows/main.yml
