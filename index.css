@@ -19,7 +19,7 @@ a{
     background-color: #FFF;
     height: 30px;
     margin: 10px;
-    margin-left: 150px;
+    left: 40%;
     position: absolute;
     border-radius: 10%;
 }
