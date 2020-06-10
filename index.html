@@ -9,7 +9,7 @@
     <title>Daedeok_highschool</title>
 </head>
 
-<body style="background-color: rgb(224, 224, 224);">
+<body id="top" style="background-color: rgb(224, 224, 224);">
 
     <h2>ㄷㄷㄱ</h2>
 
@@ -24,23 +24,27 @@
                 <h3>급식</h3>
                 <p id="p_meal"></p>
             </div>
-
+            <a href="#section2">ToDo_list</a>
         </div>
+    </div>
 
     <div class="section" id="section2">
+        <h2>ToDo list</h2>
         <div class="container">
-        <form class="js_toDoForm">
-            <input id="todoinput" type="text" placeholder="Write a to do">
-        </form>
-        <ul class="js_toDoList">
-        </ul>
+            <form class="js_toDoForm">
+                <input id="todoinput" type="text" placeholder="Write a to do" autocomplete="off">
+            </form>
+            <ul class="js_toDoList">
+            </ul>
+            <a href="#top"> 급식,일정 </a>
         </div>
     </div>
 
 
-    <button class="button" id='darkmode' style="padding : 0px;" onclick="darkmode()">
+    <!-- <button class="button" id='darkmode' style="padding : 0px;" onclick="darkmode()">
         <p>🌑</p>
-    </button>
+    </button> -->
+
     <script>
         const dark = document.getElementById('darkmode');
         const card_m = document.getElementById('meal_card');

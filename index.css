@@ -1,15 +1,36 @@
-body{
-    width: 90%;
-    height: 100%;
+html{
     scroll-behavior: smooth;
+}
+
+body{
+    width: 94%;
+    height: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 h2{
-    margin-bottom: 30px;
-    margin-left: 30px;
-    margin-right: 1px;
-    width: 100%;
+    margin-top: 10px;
+    /* width: 100%; */
+}
+
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: #FFF;
+    height: 30px;
+    margin: 10px;
+    margin-left: 150px;
+    position: absolute;
+    border-radius: 10%;
+}
+
+li{
+    list-style-type: none;
+}
+
+span{
+    background-color: #FFF;
 }
 
 .section{
@@ -17,9 +38,9 @@ h2{
 }
 
 .container{
-    position: relative;
+    position: initial;
     height: 100%;
-    width: 70%;
+    width: 96%;
     top: 100px;
     display: flex;
     margin: 0px;
@@ -29,7 +50,7 @@ h2{
     display: flex;
     flex-direction: column;
     height: 300px;
-    width: 340px;
+    width: 100%;
     position: relative;
     margin-top: 10px;
     margin-left: 10px;
@@ -70,10 +91,6 @@ h2{
     text-align: center;
 }
 
-.nav li a{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
 
 /* responsive columns */
 @media screen and (max-width: 600px) {
@@ -83,7 +100,7 @@ h2{
 }
 
 /* detect browser's dark mode */
-@media (prefers-color-scheme: dark){
+/* @media (prefers-color-scheme: dark){
 
     body{
         background-color: #555454;
@@ -98,4 +115,4 @@ h2{
     .nav li a {
         color: #FFF;
     }
-}
+} */
