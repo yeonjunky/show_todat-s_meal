@@ -25,6 +25,7 @@ a{
 }
 
 ul{
+    margin: 0px;
     padding: 0px;
     display: block;
 }
@@ -36,23 +37,26 @@ input{
     border: 1px black;
 }
 
-li{
-    list-style-type: none;
-    width: 100%;
+ul li{
+    margin: 5px;
     font-size: 25px;
+    background: #eee;
+    list-style-type: none;
 }
 
-span{
-    background-color: #FFF;
-    width: 100%;
+ul li.checked{
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
 }
 
-button{
+ul button{
     border: none;
     text-align: center;
     text-decoration: none;
-    margin: 10px;
     font-size: 25px;
+    position: absolute;
+    right: 10%;
 }
 
 .section{
@@ -111,6 +115,10 @@ button{
     left: 95%;
     top: 50%;
     text-align: center;
+}
+
+.js_toDoForm{
+    margin-bottom: 20px;
 }
 
 

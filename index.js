@@ -1,7 +1,6 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
-const jsdom = require("jsdom");
-const jquery = require("jquery");
+const fs = require("fs")
 
 function getTime(){
     const date = new Date();
@@ -27,7 +26,7 @@ const dinner_url = `https://stu.dje.go.kr/sts_sci_md01_001.do?schulCode=G1000001
 
 const getHtml = async (p_url) => {
     try {
-        return await axios.post(p_url)
+        return await axios.post(p_url);
     }
     catch {
          
@@ -38,7 +37,7 @@ const lunch = {};
 const dinner = {};
 
 
-getHtml(lunch_url)
+const meal = getHtml(lunch_url)
     .then(html => {
         const $ = cheerio.load(html.data);
         const $body = $('body').find("tbody").children('tr').eq(1);
@@ -47,35 +46,6 @@ getHtml(lunch_url)
         if (lunch.data == " "){
             lunch.data = '오늘 급식은 없습니다.';
         }
+        fs.writeFileSync('meal.txt', lunch.data, 'utf8');
         console.log(lunch);
     });
-
-// const xhr = new XMLHttpRequest();
-// xhr.onreadystatechange = function() {
-//     if(xhr.readyState  === xhr.DONE){
-//         if(xhr.status === 200 || xhr.status === 201){
-//             console.log("asdf");
-//         }
-//         else {
-//             console.error(xhr.responseText);
-//         }
-//     }
-// }
-
-// xhr.open('POST', git_url);
-// xhr.send();
-
-
-
-// getHtml(dinner_url)
-//     .then(html => {
-//         const $ = cheerio.load(html.data);
-//         const $body = $('body').find("tbody").children('tr').eq(1);
-//         dinner.key = $body.find('th').text();
-//         dinner.data = $body.find('td').eq(day).text();
-//         if (dinner.data == " "){
-//             dinner.data = '오늘 급식은 없습니다.';
-//         }
-//         console.log(dinner);
-//     });
-
