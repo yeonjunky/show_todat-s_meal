@@ -30,7 +30,6 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4.3.0
       with:
         commit_message: Apply txt file changes
-
-        file_pattern: *.txt
+        file_pattern: /*.txt
         
 
