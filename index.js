@@ -48,4 +48,5 @@ const meal = getHtml(lunch_url)
         }
         fs.writeFileSync('meal.txt', lunch.data, 'utf8');
         console.log(lunch);
+        process.exit();
     });
