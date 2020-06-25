@@ -35,18 +35,34 @@ const getHtml = async (p_url) => {
 
 const lunch = {};
 const dinner = {};
+const DotReg = /\.+/g
+const Reg = /[0-9]/g
 
-
-const meal = getHtml(lunch_url)
+getHtml(lunch_url)
     .then(html => {
         const $ = cheerio.load(html.data);
         const $body = $('body').find("tbody").children('tr').eq(1);
         lunch.key = $body.find('th').text();
         lunch.data = $body.find('td').eq(day).text();
+        lunch.data = lunch.data.replace(Reg, "");
+        lunch.data = lunch.data.replace(DotReg, " ");
         if (lunch.data == " "){
             lunch.data = '오늘 급식은 없습니다.';
         }
         fs.writeFileSync('meal.txt', lunch.data, 'utf8');
         console.log(lunch);
-        process.exit();
     });
+
+// getHtml(dinner_url)
+//     .then(html => {
+//         const $ = cheerio.load(html.data);
+//         const $body = $('body').find("tbody").children('tr').eq(1);
+//         dinner.key = $body.find('th').text();
+//         dinner.data = $body.find('td').eq(day).text();
+//         if (dinner.data == " "){
+//             dinner.data = '오늘 급식은 없습니다.';
+//         }
+//         fs.writeFileSync('meal.txt', dinner.data, 'utf8');
+//         console.log(dinner);
+//         process.exit();
+//     });

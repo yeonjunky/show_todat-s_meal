@@ -44,7 +44,6 @@
     <!-- <button class="button" id='darkmode' style="padding : 0px;" onclick="darkmode()">
         <p>🌑</p>
     </button> -->
-
     <script>
         const dark = document.getElementById('darkmode');
         const card_m = document.getElementById('meal_card');
@@ -53,6 +52,10 @@
         const p_meal = document.getElementById('p_meal');
         const nav = document.getElementById('nav');
         const nav_a = document.getElementById('')
+
+        fetch('meal.txt')
+        .then(response => response.text())
+        .then(text => p_meal.innerHTML = text)
 
         function darkmode() {
 
