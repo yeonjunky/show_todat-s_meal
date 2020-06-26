@@ -6,7 +6,7 @@ function getTime(){
     const date = new Date();
     const yyyy = date.getFullYear().toString();
     const mm = date.getMonth() + 1;
-    const dd = date.getDate().toString();
+    const dd = (date.getDate() + 1).toString();
 
     if (mm < 10) {
         modifiedMm = '0' + mm.toString();
