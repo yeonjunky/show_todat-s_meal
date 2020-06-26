@@ -45,9 +45,9 @@ getHtml(lunch_url)
         lunch.data = $body.find('td').eq(day).text();
         lunch.data = lunch.data.replace(Reg, "");
         lunch.data = lunch.data.replace(DotReg, " ");
-        // if (lunch.data === " " || lunch.data === ""){
-        //     lunch.data = '오늘 급식은 없습니다.';
-        // }
+        if (lunch.data === " " || lunch.data === ""){
+            lunch.data = '오늘 급식은 없습니다.';
+        }
         fs.writeFileSync('meal.txt', lunch.data, 'utf8');
         console.log(lunch);
     });
