@@ -11,12 +11,11 @@ function getTime(){
     if (mm < 10) {
         modifiedMm = '0' + mm.toString();
     }
-
     return yyyy + '.' + modifiedMm + '.' + dd;
 }
 
 let currentDate = getTime();
-let day = new Date().getDay();
+let day = new Date().getDay() + 1;
 
 const lunchCode = "2";
 const dinnerCode = "3";
@@ -46,13 +45,12 @@ getHtml(lunch_url)
         lunch.data = $body.find('td').eq(day).text();
         lunch.data = lunch.data.replace(Reg, "");
         lunch.data = lunch.data.replace(DotReg, " ");
-        if (lunch.data == " "){
-            lunch.data = '오늘 급식은 없습니다.';
-        }
+        // if (lunch.data === " " || lunch.data === ""){
+        //     lunch.data = '오늘 급식은 없습니다.';
+        // }
         fs.writeFileSync('meal.txt', lunch.data, 'utf8');
         console.log(lunch);
     });
-
 // getHtml(dinner_url)
 //     .then(html => {
 //         const $ = cheerio.load(html.data);
